@@ -1,4 +1,4 @@
-create table if not exists mkustov.animal
+create table if not exists animal
 (
     id bigint not null primary key,
     name varchar (100),
@@ -7,4 +7,4 @@ create table if not exists mkustov.animal
     character varchar (100),
     secretInfo varchar (100)
 );
-alter table mkustov.animal owner to mkustov;
+alter table animal owner to mkustov;

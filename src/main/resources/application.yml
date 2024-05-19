@@ -6,7 +6,7 @@ spring:
   application:
     name: spring
   datasource:
-    url: jdbc:postgresql:147.45.151.57:5432/mkustov
+    url: jdbc:postgresql://147.45.151.57:5432/mkustov
     username: mkustov
     password: mkustov1
     hikari:
