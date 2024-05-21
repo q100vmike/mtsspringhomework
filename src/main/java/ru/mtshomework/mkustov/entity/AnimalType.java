@@ -3,6 +3,7 @@ package ru.mtshomework.mkustov.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -23,5 +24,6 @@ public class AnimalType {
     private String extraInfo;
 
     @OneToMany(mappedBy = "animalType", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
     private List<Animal> animalList;
 }

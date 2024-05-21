@@ -16,6 +16,6 @@ public class AnimalTypeService {
 
     public AnimalType findById(Long id) {
         return animalTypeRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException(String.format("Not found animal type with id %s", id)));
+                .orElseThrow(() -> new RuntimeException(String.format("***Not found animal type with id %s", id)));
     }
 }

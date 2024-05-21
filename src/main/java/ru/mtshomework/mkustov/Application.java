@@ -33,6 +33,10 @@ public class Application {
             Animal animal2 = new Animal("Wolf", "Gray", 20D, "bad", "secret2");
             Animal animal3 = new Animal("Iguana", "Igi", 30D, "norm", "secret3");
             Animal animal4 = new Animal("Crocodile", "Croco", 40D, "good", "secret4");
+
+            AnimalType animalType = animalTypeService.findById(3L);
+            String s = animalType.getType();
+
             animal1.setAnimalType(animalTypeService.findById(3L));
             animal2.setAnimalType(animalTypeService.findById(1L));
             animal3.setAnimalType(animalTypeService.findById(4L));
@@ -44,6 +48,10 @@ public class Application {
             animalService.save(animal4);
 
             List<Animal> list = animalService.findAll();
+
+            for(Animal animal : list) {
+                System.out.println(animal);
+            }
         };
 
     }

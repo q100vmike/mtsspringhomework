@@ -7,7 +7,21 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @NoArgsConstructor
+@Table(schema = "animals", name = "animal")
 public class Animal {
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "animalType=" + animalType +
+                ", name='" + name + '\'' +
+                ", Id=" + Id +
+                ", breed='" + breed + '\'' +
+                ", cost=" + cost +
+                ", character='" + character + '\'' +
+                ", secretInfo='" + secretInfo + '\'' +
+                '}';
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,7 +33,7 @@ public class Animal {
     private String character;
     private String secretInfo;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne()
     @JoinColumn(name = "type_id")
     private AnimalType animalType;
 

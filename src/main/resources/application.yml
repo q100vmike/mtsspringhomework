@@ -4,7 +4,6 @@ spring:
   datasource:
     url: jdbc:postgresql://147.45.151.57:5432/mkustov
     username: mkustov
-    schema: animals
     password: mkustov1
     hikari:
       connection-timeout: 20000
@@ -12,7 +11,6 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
-      default_schema: animals
+      ddl-auto: none
   liquibase:
     change-log: classpath:liquibase/changelog.yml

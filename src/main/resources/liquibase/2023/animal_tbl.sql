@@ -13,7 +13,7 @@ create table if not exists animals.animal
     breed varchar (100),
     cost numeric(38,2),
     character varchar (100),
-    secretinfo varchar (100),
+    secret_info varchar (100),
 	type_id int,
        CONSTRAINT fk_animal_type
           FOREIGN KEY(type_id)
