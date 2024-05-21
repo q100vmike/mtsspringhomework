@@ -6,4 +6,5 @@ import ru.mtshomework.mkustov.entity.Animal;
 
 @Repository
 public interface AnimalRepository extends JpaRepository<Animal, Long> {
+
 }

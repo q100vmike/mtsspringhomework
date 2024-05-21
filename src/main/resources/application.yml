@@ -1,13 +1,10 @@
 spring:
-  sql:
-    init:
-      data-locations: data.sql
-      mode: always
   application:
     name: spring
   datasource:
     url: jdbc:postgresql://147.45.151.57:5432/mkustov
     username: mkustov
+    schema: animals
     password: mkustov1
     hikari:
       connection-timeout: 20000
@@ -16,5 +13,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create
+      default_schema: animals
   liquibase:
-    enabled: false
+    change-log: classpath:liquibase/changelog.yml

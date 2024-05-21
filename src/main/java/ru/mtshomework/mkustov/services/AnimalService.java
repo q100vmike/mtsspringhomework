@@ -11,6 +11,10 @@ public class AnimalService {
 
     private AnimalRepository animalRepository;
 
+    public AnimalService(AnimalRepository animalRepository) {
+        this.animalRepository = animalRepository;
+    }
+
     public List<Animal> findAll(){
         return animalRepository.findAll();
     }
