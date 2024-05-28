@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @Table(schema = "animals", name = "animal_type")
-public class AnimalType {
+public class  AnimalType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
