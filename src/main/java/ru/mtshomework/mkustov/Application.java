@@ -13,6 +13,7 @@ import ru.mtshomework.mkustov.services.AnimalService;
 import ru.mtshomework.mkustov.services.AnimalTypeService;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @SpringBootApplication
@@ -42,16 +43,26 @@ public class Application {
             animal3.setAnimalType(animalTypeService.findById(4L));
             animal4.setAnimalType(animalTypeService.findById(1L));
 
-            animalService.save(animal1);
+/*            animalService.save(animal1);
             animalService.save(animal2);
             animalService.save(animal3);
-            animalService.save(animal4);
+            animalService.save(animal4);*/
 
             List<Animal> list = animalService.findAll();
 
             for(Animal animal : list) {
                 System.out.println(animal);
             }
+
+            List<Animal> Croco = animalService.findByName("Crocodile");
+            Croco.stream().forEach(System.out::println);
+
+            String mostExpensivePredator = animalService.findMostExpensiveAnimal("Хищники");
+            System.out.println(Optional.ofNullable(mostExpensivePredator));
+
+            Optional<Animal> poor = animalService.findMostPoorAnimal("Домашние");
+            System.out.println(poor.get());
+
         };
 
     }
